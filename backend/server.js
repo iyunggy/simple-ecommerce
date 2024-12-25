@@ -19,10 +19,12 @@ const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/ProductRoutes')
 const fileRoutes = require('./routes/FileRoutes')
 const authRoutes = require('./routes/AuthRoutes')
+const transactionRoutes = require('./routes/TransactionRoutes')
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes)
 app.use('/api/files', fileRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/transactions', transactionRoutes);
 
 // Server Listen
 const PORT = process.env.PORT || 5000;

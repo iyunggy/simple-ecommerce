@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Input, Button, Upload, message, Select } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import axios from "axios";
-import { URL_PRODUCT } from "../utils/Endpoint"; // Ganti dengan URL backend Anda
+import { URL_PRODUCT } from "../../utils/Endpoint"; // Ganti dengan URL backend Anda
 import { useNavigate } from "react-router-dom";
 
 const { Option } = Select;

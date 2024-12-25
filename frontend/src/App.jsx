@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Layout, Button } from "antd";
 import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 import Sidebar from "./components/Sidebar";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/dashboard/Dashboard";
 import Login from "./pages/Login";
-import Product from "./pages/Product";
-import AddProduct from "./pages/ProductCreate";
+import Product from "./pages/dashboard/Product";
+import AddProduct from "./pages/dashboard/ProductCreate";
+import Checkout from "./pages/Checkout";
+import Home from "./pages/Home";
 
 const { Header, Content } = Layout;
 
@@ -21,6 +23,8 @@ const App = () => {
     <Router>
       <Routes>
         {/* Public Routes */}
+        <Route path='/' element={<Home />} />
+        <Route path='/checkout/:id' element={<Checkout />} />
         <Route path='/signin' element={<Login />} />
 
         {/* Protected Routes - Dashboard */}
