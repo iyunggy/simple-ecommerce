@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema({
     required: [true, 'Price is required'],
     unique: true,
   },
+  thubmnail: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model('Products', userSchema);
