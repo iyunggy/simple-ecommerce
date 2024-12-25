@@ -3,11 +3,14 @@ import { Input, Button, Form, Alert } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import axios from "axios";
 import { URL_SIGNIN } from "../utils/Endpoint";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const [errMsg, setErrMsg] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (values) => {
     setLoading(true);
@@ -18,9 +21,11 @@ function Login() {
     axios
       .post(URL_SIGNIN, data)
       .then((res) => {
-        // console.log("res", res);
+        console.log("res", res);
         if (res.data.role !== "Admin") {
           setErrMsg("Anda tidak memiliki akses ke dalam dashboard admin");
+        } else {
+          navigate("/dashboard");
         }
         setLoading(false);
       })

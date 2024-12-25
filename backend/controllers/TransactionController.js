@@ -4,12 +4,12 @@ const midtransClient = require("midtrans-client");
 // Menambahkan product baru
 exports.createTransaction = async (req, res) => {
   try {
-    const { first_name, amount } = req.body;
+    const { first_name, amount, product_id } = req.body;
     // Create Snap API instance
     let snap = new midtransClient.Snap({
       // Set to true if you want Production Environment (accept real transaction).
       isProduction: false,
-      serverKey: "xx",
+      serverKey: process.env.MIDTRANS_SERVERKEY,
     });
 
     const order_id = "ORDER-" + new Date().getTime() // Order ID unik

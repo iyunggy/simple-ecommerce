@@ -8,12 +8,14 @@ const userSchema = new mongoose.Schema({
   price: {
     type: Number,
     required: [true, "Price is required"],
-    unique: true,
   },
   thumbnail: {
     type: String,
     required: true,
   },
+  cloudinaryId: {
+    type: String
+  }
 });
 
 module.exports = mongoose.model("Products", userSchema);

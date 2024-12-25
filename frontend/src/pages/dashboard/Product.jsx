@@ -30,7 +30,7 @@ const Product = () => {
       dataIndex: "thumbnail",
       render: (_, record) => {
         console.log("recor", record);
-        return <Image src={record?.thumbnail} loading='lazy' />;
+        return <Image src={record?.thumbnail} width={100} loading='lazy' />;
         // if (record.thumbnail) {
         //   // return <Image src={record.thumbnail} loading='lazy' />;
 
@@ -52,15 +52,27 @@ const Product = () => {
     //   dataIndex: "category",
     //   key: "category",
     // },
-    // {
-    //   title: "Action",
-    //   key: "action",
-    //   render: (_, record) => (
-    //     <Button type='primary' danger>
-    //       Delete
-    //     </Button>
-    //   ),
-    // },
+    {
+      title: "Action",
+      key: "action",
+      render: (_, record) => (
+        <Button
+          type='primary'
+          danger
+          onClick={() => {
+            console.log("id", record?._id);
+            axios
+              .delete(`${URL_PRODUCT}/${record?._id}`)
+              .then((res) => {
+                console.log(res);
+                window.location.reload();
+              })
+              .catch((err) => console.log("err", err));
+          }}>
+          Delete
+        </Button>
+      ),
+    },
   ];
 
   return (

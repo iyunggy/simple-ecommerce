@@ -10,6 +10,9 @@ const userSchema = new mongoose.Schema({
   amount: {
     type: Number,
   },
+  product_id: {
+    type: String
+  },
   midtrans_url: {
     type: String,
   },
