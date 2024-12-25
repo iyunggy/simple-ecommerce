@@ -1,0 +1,6 @@
+Cara menjalankan backend
+1. npm install
+2. npm run dev atau npm run start
+3. keterangan:
+ a. npm run dev: menggunakan nodemon yang artinya setiap ada perubahan di backend server akan otomatis restart
+ b. npm run start: running biasanya artinya setiap ada perubahan di backend kamu harus restart server secara manual

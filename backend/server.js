@@ -17,8 +17,10 @@ app.use(express.json());
 // Routes
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/ProductRoutes')
+const fileRoutes = require('./routes/FileRoutes')
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes)
+app.use('/api/files', fileRoutes);
 
 // Server Listen
 const PORT = process.env.PORT || 5000;
