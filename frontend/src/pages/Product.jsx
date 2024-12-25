@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Table, Button } from "antd";
+import { Table, Button, Image } from "antd";
 import axios from "axios";
 import { URL_PRODUCT } from "../utils/Endpoint";
 import { Link } from "react-router-dom";
@@ -25,6 +25,18 @@ const Product = () => {
 
   // Kolom untuk tabel
   const columns = [
+    {
+      title: "Thumbnail",
+      dataIndex: "thumbnail",
+      render: (_, record) => {
+        console.log("recor", record);
+        return <Image src={record?.thumbnail} loading='lazy' />;
+        // if (record.thumbnail) {
+        //   // return <Image src={record.thumbnail} loading='lazy' />;
+
+        // }
+      },
+    },
     {
       title: "Name",
       dataIndex: "name",

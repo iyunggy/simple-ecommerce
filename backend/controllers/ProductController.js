@@ -21,7 +21,7 @@ exports.createProduct = async (req, res) => {
     // Membuat produk dengan data dari body dan menambahkan thumbnail URL
     const product = new Product({
       ...req.body, // Spread operator untuk menambahkan semua data dari body
-      thubmnail: result?.secure_url, // Tambahkan URL dari Cloudinary
+      thumbnail: result?.secure_url, // Tambahkan URL dari Cloudinary
     });
 
     // Menyimpan produk ke database
