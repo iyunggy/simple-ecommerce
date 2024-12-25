@@ -9,7 +9,7 @@ exports.createTransaction = async (req, res) => {
     let snap = new midtransClient.Snap({
       // Set to true if you want Production Environment (accept real transaction).
       isProduction: false,
-      serverKey: "SB-Mid-server-d_VLoUMEdeCq2BVEF5AICKm7",
+      serverKey: "xx",
     });
 
     const order_id = "ORDER-" + new Date().getTime() // Order ID unik
