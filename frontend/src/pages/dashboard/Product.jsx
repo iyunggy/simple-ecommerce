@@ -56,21 +56,26 @@ const Product = () => {
       title: "Action",
       key: "action",
       render: (_, record) => (
-        <Button
-          type='primary'
-          danger
-          onClick={() => {
-            console.log("id", record?._id);
-            axios
-              .delete(`${URL_PRODUCT}/${record?._id}`)
-              .then((res) => {
-                console.log(res);
-                window.location.reload();
-              })
-              .catch((err) => console.log("err", err));
-          }}>
-          Delete
-        </Button>
+        <>
+          <Button type='primary'>
+            <Link to={`/dashboard/products/${record?._id}`}>Update</Link>
+          </Button>
+          <Button
+            type='primary'
+            danger
+            onClick={() => {
+              console.log("id", record?._id);
+              axios
+                .delete(`${URL_PRODUCT}/${record?._id}`)
+                .then((res) => {
+                  console.log(res);
+                  window.location.reload();
+                })
+                .catch((err) => console.log("err", err));
+            }}>
+            Delete
+          </Button>
+        </>
       ),
     },
   ];

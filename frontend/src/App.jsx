@@ -9,6 +9,7 @@ import Product from "./pages/dashboard/Product";
 import AddProduct from "./pages/dashboard/ProductCreate";
 import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
+import UpdateProduct from "./pages/dashboard/ProductUpdate";
 
 const { Header, Content } = Layout;
 
@@ -63,6 +64,7 @@ const App = () => {
                     <Route path='/' element={<Dashboard />} />
                     <Route path='/products' element={<Product />} />
                     <Route path='/products/create' element={<AddProduct />} />
+                    <Route path='/products/:id' element={<UpdateProduct />} />
                   </Routes>
                 </Content>
               </Layout>
